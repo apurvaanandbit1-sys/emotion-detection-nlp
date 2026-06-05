@@ -44,5 +44,19 @@ if st.button("Predict Emotion"):
 
         prediction = model.predict(vector)[0]
 
-        st.write("Prediction:", prediction)
-        st.write("Type:", type(prediction))
+        emotion_map = {
+            0: "sadness",
+            1: "joy",
+            2: "love",
+            3: "anger",
+            4: "fear",
+            5: "surprise"
+        }
+
+        emotion = emotion_map[int(prediction)]
+
+        emoji = emotion_emoji.get(emotion, "🤔")
+
+        st.success(
+            f"{emoji} Predicted Emotion: {emotion.upper()}"
+        )
