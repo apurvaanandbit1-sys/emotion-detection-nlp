@@ -43,9 +43,11 @@ if st.button("Predict Emotion"):
 
         prediction = model.predict(vector)[0]
 
+        st.write("Prediction:", prediction)
+        st.write("Type:", type(prediction))
+
         emoji = emotion_emoji.get(prediction, "🤔")
 
         st.success(
             f"{emoji} Predicted Emotion: {prediction.upper()}"
         )
-        
