@@ -38,10 +38,11 @@ if st.button("Predict Emotion"):
 
     if text.strip() == "":
         st.warning("Please enter some text.")
+
     else:
         vector = vectorizer.transform([text])
 
-    prediction = model.predict(vector)[0]
+        prediction = model.predict(vector)[0]
 
-    st.write("Prediction:", prediction)
-    st.write("Type:", type(prediction))
+        st.write("Prediction:", prediction)
+        st.write("Type:", type(prediction))
