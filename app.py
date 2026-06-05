@@ -46,13 +46,12 @@ if st.button("Predict Emotion"):
 
         emotion_map = {
             0: "sadness",
-            1: "joy",
+            1: "anger",
             2: "love",
-            3: "anger",
+            3: "surprise",
             4: "fear",
-            5: "surprise"
+            5: "joy"
         }
-
         emotion = emotion_map[int(prediction)]
 
         emoji = emotion_emoji.get(emotion, "🤔")
